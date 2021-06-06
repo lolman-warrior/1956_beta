@@ -2019,24 +2019,161 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	option = { # Agree
+	option = { # Protection for Memel
 		name = lithuania.107.a
 		ai_chance = {
-			base = 99
+			base = 98
+		}
+		FROM = {
+			country_event = { days = 1 id = lithuania.109 }
 		}
 	}
-	option = { # Disagree
+	option = { # Memel for "Protection"
 		name = lithuania.107.b
 		ai_chance = {
 			base = 1
 		}
+		FROM = {
+			country_event = { days = 1 id = lithuania.110 }
+		}
+	}
+	option = { # Memel, no concessions
+		name = lithuania.107.c
+		ai_chance = {
+			base = 1
+		}
+		FROM = {
+			country_event = { days = 1 id = lithuania.111 }
+		}
 	}
 }
-
-
-
-
-
+# Memel for Vilnius
+country_event = {
+	id = lithuania.108
+	title = lithuania.108.t
+	desc = lithuania.108.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = { # Promise Vilnius
+		name = lithuania.108.a
+		ai_chance = {
+			base = 49
+		}
+		FROM = {
+			country_event = { days = 1 id = lithuania.112 }
+		}
+	}
+	option = { # Exchange Vilnius
+		name = lithuania.108.b
+		ai_chance = {
+			base = 49
+		}
+		FROM = {
+			country_event = { days = 1 id = lithuania.113 }
+		}
+	}
+	option = { # Promise Vilnius without
+		name = lithuania.108.c
+		ai_chance = {
+			base = 1
+		}
+		FROM = {
+			country_event = { days = 1 id = lithuania.114 }
+		}
+	}
+	option = { # Memel, no concessions
+		name = lithuania.108.d
+		ai_chance = {
+			base = 1
+		}
+		FROM = {
+			country_event = { days = 1 id = lithuania.111 }
+		}
+	}
+}
+# Germany Offers Protection
+country_event = {
+	id = lithuania.109
+	title = lithuania.109.t
+	desc = lithuania.109.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = { # bad stuff
+		name = lithuania.109.a
+	}
+}
+# Germany Lets Lithuania Control Memel for Puppeting
+country_event = {
+	id = lithuania.110
+	title = lithuania.110.t
+	desc = lithuania.110.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = { # bad stuff
+		name = lithuania.110.a
+	}
+}
+# Germany Demands Memel without concessions
+country_event = {
+	id = lithuania.111
+	title = lithuania.111.t
+	desc = lithuania.111.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lithuania.111.a
+	}
+	option = {
+		name = lithuania.111.b
+	}
+}
+# Germany Promises Vilnius
+country_event = {
+	id = lithuania.112
+	title = lithuania.112.t
+	desc = lithuania.112.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lithuania.112.a
+	}
+}
+# Germany Exchanges Vilnius
+country_event = {
+	id = lithuania.113
+	title = lithuania.113.t
+	desc = lithuania.113.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lithuania.113.a
+	}
+}
+# Germany Hands over Vilnius no Strings Attached
+country_event = {
+	id = lithuania.114
+	title = lithuania.114.t
+	desc = lithuania.114.d
+	picture = GFX_report_event_german_troops
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lithuania.114.a
+	}
+}
 
 
 
