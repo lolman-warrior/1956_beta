@@ -4458,6 +4458,7 @@ focus = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = LIT_lithuanian_irridentism }
+		mutually_exclusive = { focus = LIT_demand_vilnius }
 		ai_will_do = {
 			factor = 1
 		}
@@ -4537,17 +4538,99 @@ focus = {
 	#Memel for Protection
 	focus = {
 		id = LIT_memel_for_protection
-		icon = GFX_goal_ENG_prevent_a_continental_hegemony
+		icon = GFX_goal_generic_military_deal
 		relative_position_id = LIT_offer_our_enemies_support
 		x = 3
 		y = 1
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = LIT_lithuanian_irridentism }
+		mutually_exclusive = { focus = LIT_memel_for_protection }
+		mutually_exclusive = { focus = LIT_contain_german_agression }
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			GER = {
+				has_government = fascism
+				is_faction_leader = yes
+				has_capitulated = no
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
 		completion_reward = {
+			GER = {
+				country_event = { days = 1 id = lithuania.107 }
+			}
+		}
+	}
+	
+	#Memel for Vilnius
+	focus = {
+		id = LIT_memel_for_vilnius
+		icon = GFX_goal_generic_military_deal
+		relative_position_id = LIT_offer_our_enemies_support
+		x = 5
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = LIT_lithuanian_irridentism }
+		mutually_exclusive = { focus = LIT_memel_for_protection }
+		mutually_exclusive = { focus = LIT_contain_german_agression }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			GER = {
+				has_government = fascism
+				is_faction_leader = yes
+				has_capitulated = no
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+			LIT = {
+				NOT = {
+					owns_state = 784
+				}
+			}
+		}
+		completion_reward = {
+			GER = {
+				country_event = { days = 1 id = lithuania.108 }
+			}
+		}
+	}
+	
+	# Join the Axis
+	focus = {
+		id = LIT_join_axis
+		icon = GFX_focus_chi_mission_to_germany
+		relative_position_id = LIT_memel_for_protection
+		x = 0
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = LIT_memel_for_protection focus = LIT_memel_for_vilnius focus = LIT_germanlithuanian_mutual_assistance_treaty }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			GER = {
+				has_government = fascism
+				is_faction_leader = yes
+				has_capitulated = no
+				NOT = {
+					has_war_with = ROOT
+				}
+			}
+		}
+		completion_reward = {
+			GER = {
+				country_event = generic.2
+			}
 		}
 	}
 
